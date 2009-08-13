@@ -1,0 +1,243 @@
+@charset "ISO-8859-1";
+/* CSS Document */
+
+/*Kronda Adair
+WDIM 380
+Instructor: Griffin Walker
+Summer 2009 07/29/09
+
+id's: container, header, nav, menu, houses(img), learn, news, wiki, footer, the_houses(pg2 body), energy(pg3 body)
+Classes: next_link (paragraph at the bottom right of the page)
+Colors: Main Background: #c9ebff, Interactive BG: #f2faff, links #176495, blurb border: #dbe2e5
+*/
+
+/*reset styles*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+body {
+	font-family: Verdana, Arial, sans-serif;
+	background-color: #c9ebff;
+}
+
+h1 {
+	margin-left: -1500px;
+}
+
+#interactive h2 {
+	font-size: 1em;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+
+#container {
+	width: 1024px;
+	margin: 0 auto 0 auto;
+	position: relative;
+}
+
+#header {
+	width: 1024px;
+	height: 196px;
+	background: transparent url('images/header.jpg') no-repeat top center;
+}
+
+a {
+	color: #176495;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#interactive {
+	background-color: #f2faff;
+	width: 952px;
+	margin-top: 0;
+	margin-left: 28px;
+	float: left;
+}
+
+#interactive p {
+	margin-bottom: 5px;
+}
+
+#nav ul {
+	margin-top: -41px;
+	margin-left:45px;
+}
+
+#nav li {
+	float: left;
+	width: 11em;
+	margin-right: 7px;
+}
+
+#container #nav .last img {
+	margin-left: 207px;
+}
+
+#menu img {
+	height: 33px;
+	margin-left: 0;
+	margin-top: -2px;
+}
+
+#houses {
+	float: left;
+	margin-top: 68px;
+	margin-left: 24px;
+}
+
+#learn, #news, #wiki {
+	font-size: .8em;
+	width: 329px;
+	height: auto;
+	padding: 10px;
+	margin-right: 44px;
+	margin-bottom: 20px;
+	line-height: 122%;
+	border: 2px solid #dbe2e5;
+	float: right;
+	background: transparent url('images/blurb_bg.png') repeat;
+}
+
+#learn {
+	margin-top: -422px;
+}
+
+#news {
+	margin-top: -252px;
+}
+
+#wiki {
+	margin-top: -116px;
+}
+
+#news, #wiki {
+	clear: right;
+}
+
+.next_link {
+	clear: both;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	margin-left: 82%;
+	font-size: .8em;
+	padding-bottom: 50px;
+}
+
+.next_link span {
+	font-size: .75em;
+	text-transform: capitalize;
+}
+
+#footer {
+	width: 1024px;
+	height: 171px;
+	background: transparent url('images/footer_bg.png') no-repeat top center;
+	color: white;
+	position: relative;
+	top: 572px;
+	left: 0;
+}
+
+#footer ul {
+	height: 68px;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#footer ul li {
+	width: 170px;
+	height: 50px;
+	float: left;
+	display: inline;
+	margin-right: 63px;
+	position: relative;
+	top: -526px;
+	left: 223px;
+}
+
+#footer ul li p {
+	font-size: .6em;
+	margin-top: 5px;
+	line-height: 130%;
+	letter-spacing: 0.05em;
+	
+}
+
+#footer ul li a {
+	color: white;
+}
+#container #footer ul li.last {
+	margin-left: 45px;
+}
+
+/*pg 2 styles (the_houses)*/
+
+#the_houses #big_house {
+	float: right;
+	margin-top: 60px;
+	margin-right: 90px;
+}
+
+#the_houses #blurb_container {
+	width: 330px;
+	height: auto;
+	margin-top: 28px;
+}
+#the_houses #blurb1, #the_houses #blurb2, #the_houses #blurb3 {
+	font-size: .8em;
+	width: 329px;
+	height: auto;
+	padding: 10px;
+	margin-top: 0;
+	margin-left: 50px;
+	margin-bottom: 20px;
+	line-height: 122%;
+	border: 2px solid #dbe2e5;
+	background: transparent url('images/blurb_bg.png') repeat;
+}
+
+#the_houses .next_link {
+	margin-top: -21px;
+	margin-bottom: 0px;
+	margin-left: 75%;
+}
+
+#the_houses #footer {
+	top: 572px;
+}
+
+#the_houses #footer ul li {
+	margin-top: 14px;
+}
+
+/*pg 3 styles (energy)*/
+
+#energy #energy_graphic {
+	float: left;
+	margin-top: 68px;
+	margin-left: 24px;
+}
+
+#energy #blurb1, #energy #blurb2 {
+	font-size: .8em;
+	width: 329px;
+	height: auto;
+	padding: 10px;
+	margin-top: 0;
+	margin-left: 0;
+	margin-bottom: 20px;
+	line-height: 122%;
+	border: 2px solid #dbe2e5;
+	background: transparent url('images/blurb_bg.png') repeat;
+}
+
+#energy #blurb_container {
+	width: 330px;
+	height: auto;
+	margin-top: 36px;
+	margin-right: 70px;
+	float: right;
+}
