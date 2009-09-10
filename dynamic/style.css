@@ -132,7 +132,7 @@ body{
 	width:100%;
 	height:69px;
 	margin:-69px 0px 0px 0px;
-	background:url(_img/grass_background.png) repeat-x 100% 20%;
+	background:url(_img/grass_background.png) repeat-x 0% 100%;
 	position:relative;
 	z-index:-1;
 }
@@ -211,7 +211,7 @@ div.slider_previous{
 	border:1px solid #ace;
 	padding:16px 16px 16px 16px;
 	margin:0px 0px 12px 0px;
-	width:330px;
+	width:350px;
 	position:relative;
 	z-index:1;
 }
@@ -224,7 +224,7 @@ div.slider_previous{
 	}
 	.info_box p{
 		font-size:14px;
-		line-height:1.2em;
+		line-height:1.1em;
 	}
 	.info_box a{
 		font-size:14px;

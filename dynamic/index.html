@@ -30,6 +30,9 @@
 					mouse_over.css("left",x-137+"px");
 					mouse_over.css("top",y-137+"px");
 				}
+				function animateBackground(){
+					$("#grass_background").animate({backgroundPosition: (current_slide * -30) + "% 100%"})
+				}
 				$(".a_house").mouseover(function(e){
 					e.preventDefault();
 					updatePosition(e);		
@@ -53,6 +56,7 @@
 					current_slide = 0;
 					$("#slider").animate({marginLeft:"0px"},500);
 					$("#slider_indicator").animate({left:"95px"},500);
+					animateBackground();
 					pageTracker._trackEvent('Nav', 'Click', 'Intro');
 				});
 				$(".slider_nav_houses").click(function(e){
@@ -60,6 +64,7 @@
 					current_slide = 1;
 					$("#slider").animate({marginLeft:"-910px"},500);
 					$("#slider_indicator").animate({left:"310px"},500);
+					animateBackground();
 					pageTracker._trackEvent('Nav', 'Click', 'Houses');
 				});
 				$(".slider_nav_neighborhood").click(function(e){
@@ -67,6 +72,7 @@
 					current_slide = 2;
 					$("#slider").animate({marginLeft:"-1820px"},500);
 					$("#slider_indicator").animate({left:"560px"},500);
+					animateBackground();
 					pageTracker._trackEvent('Nav', 'Click', 'Neighborhood Energy');
 				});
 				$(".slider_nav_more").click(function(e){
@@ -74,6 +80,7 @@
 					current_slide = 3;
 					$("#slider").animate({marginLeft:"-2730px"},500);
 					$("#slider_indicator").animate({left:"820px"},500);
+					animateBackground();
 					pageTracker._trackEvent('Nav', 'Click', 'More Info');
 				});
 				
@@ -82,6 +89,7 @@
 					current_slide++;
 					$("#slider").animate({marginLeft: slider_positions[current_slide] + "px"},500);
 					$("#slider_indicator").animate({left: indicator_positions[current_slide] + "px"},500);
+					animateBackground();
 					
 					// analytics
 					switch(current_slide){
@@ -95,6 +103,7 @@
 					current_slide--;
 					$("#slider").animate({marginLeft: slider_positions[current_slide] + "px"},500);
 					$("#slider_indicator").animate({left: indicator_positions[current_slide] + "px"},500);
+					animateBackground();
 					
 					// analytics
 					switch(current_slide){
