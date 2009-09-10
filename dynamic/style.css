@@ -65,7 +65,7 @@ body{
 }
 #slider_nav li{
 	float:left;
-	margin:0px 70px;
+	margin:0px 69px;
 	vertical-align:top;
 }
 #slider_nav li a{
@@ -132,7 +132,7 @@ body{
 	width:100%;
 	height:69px;
 	margin:-69px 0px 0px 0px;
-	background:transparent url(_img/grass_background.png) repeat-x bottom 20%;
+	background:url(_img/grass_background.png) repeat-x 100% 20%;
 	position:relative;
 	z-index:-1;
 }
