@@ -16,24 +16,28 @@
 					current_slide = 0;
 					$("#slider").animate({marginLeft:"0px"},500);
 					$("#slider_indicator").animate({left:"95px"},500);
+					pageTracker._trackEvent('Nav', 'Click', 'Intro');
 				});
 				$(".slider_nav_houses").click(function(e){
 					e.preventDefault();
 					current_slide = 1;
 					$("#slider").animate({marginLeft:"-910px"},500);
 					$("#slider_indicator").animate({left:"310px"},500);
+					pageTracker._trackEvent('Nav', 'Click', 'Houses');
 				});
 				$(".slider_nav_neighborhood").click(function(e){
 					e.preventDefault();
 					current_slide = 2;
 					$("#slider").animate({marginLeft:"-1820px"},500);
 					$("#slider_indicator").animate({left:"560px"},500);
+					pageTracker._trackEvent('Nav', 'Click', 'Neighborhood Energy');
 				});
 				$(".slider_nav_more").click(function(e){
 					e.preventDefault();
 					current_slide = 3;
 					$("#slider").animate({marginLeft:"-2730px"},500);
 					$("#slider_indicator").animate({left:"820px"},500);
+					pageTracker._trackEvent('Nav', 'Click', 'More Info');
 				});
 				
 				$("a.slider_next").click(function(e){
@@ -41,12 +45,26 @@
 					current_slide++;
 					$("#slider").animate({marginLeft: slider_positions[current_slide] + "px"},500);
 					$("#slider_indicator").animate({left: indicator_positions[current_slide] + "px"},500);
+					
+					// analytics
+					switch(current_slide){
+						case 1: pageTracker._trackEvent('Nav', 'Click', 'Houses'); break;
+						case 2: pageTracker._trackEvent('Nav', 'Click', 'Neighborhood Energy'); break;
+						case 3: pageTracker._trackEvent('Nav', 'Click', 'More Info'); break;
+					}
 				});
 				$("a.slider_previous").click(function(e){
 					e.preventDefault();
 					current_slide--;
 					$("#slider").animate({marginLeft: slider_positions[current_slide] + "px"},500);
 					$("#slider_indicator").animate({left: indicator_positions[current_slide] + "px"},500);
+					
+					// analytics
+					switch(current_slide){
+						case 0: pageTracker._trackEvent('Nav', 'Click', 'Intro'); break;
+						case 1: pageTracker._trackEvent('Nav', 'Click', 'Houses'); break;
+						case 2: pageTracker._trackEvent('Nav', 'Click', 'Neighborhood Energy'); break;
+					}
 				});
 			});
 		</script>
@@ -55,10 +73,10 @@
 	<body>
 		<div id="header">
 			<ul id="nav">
-				<li id="home"><a href="#">Home</a></li>
-				<li id="news"><a href="#">News</a></li>
-				<li id="wiki"><a href="#">Wiki</a></li>
-				<li id="donate"><a href="#">Donate</a></li>
+				<li id="home"><a href="#" onClick="pageTracker._trackEvent('Nav', 'Click', 'Home');">Home</a></li>
+				<li id="news"><a href="#" onClick="pageTracker._trackEvent('Outbound', 'Click', 'News');">News</a></li>
+				<li id="wiki"><a href="#" onClick="pageTracker._trackEvent('Outbound', 'Click', 'Wiki');">Wiki</a></li>
+				<li id="donate"><a href="#" onClick="pageTracker._trackEvent('Outbound', 'Click', 'Donate');">Donate</a></li>
 				<div class="clear"></div>
 			</ul>
 		</div>
@@ -66,6 +84,8 @@
 			
 			<ul id="slider_nav">
 				<div id="slider_indicator"></div>
+				<!-- ANALYTICS FOR SLIDER NAV LINKS IS DONE VIA JAVASCRIPT -->
+				<!-- In other words... they don't need an 'onClick' -->
 				<li class="number1"><a href="#" class="slider_nav_intro">Intro</a></li>
 				<li class="number2"><a href="#" class="slider_nav_houses">The Houses</a></li>
 				<li class="number3"><a href="#" class="slider_nav_neighborhood">Neighborhood Energy</a></li>
@@ -77,7 +97,7 @@
 					<!-- INTRO PANEL -->
 					
 					<div id="slider_intro" class="slider_panel">
-						<div class="left">
+						<div class="right">
 							<div class="info_box" id="one">
 								<h1>What is IMBY energy?</h1>
 								<p>IMBY Energy is a comprehensive Neighborhood Energy project in SE Portland, Oregon. IMBY will provied renewable, carbon-neutral, thermal energy to a single block (14 homes) on SE Salmon Street.</p>
@@ -86,12 +106,12 @@
 							<div class="info_box" id="two">
 								<h1>What&#x27;s the latest news?</h1>
 								<p>For the latest project updates and information about what&rsquo;s new with IMBY, check out our blog.</p>
-								<a href="/blog">Read our blog &raquo;</a</a>
+								<a href="http://imbyenergy.tumblr.com"  onClick="pageTracker._trackEvent('Outbound', 'Click', 'Blog');">Read our blog &raquo;</a</a>
 							</div>
 							<div class="info_box" id="three">
 								<h1>I&#x27;d like the technical details</h1>
 								<p>To learn more about the technologies and methods behind IMBY, visit our wiki. </p>
-								<a href="/wiki">Visit our wiki &raquo;</a>
+								<a href="#"  onClick="pageTracker._trackEvent('Outbound', 'Click', 'Wiki');">Visit our wiki &raquo;</a>
 							</div>
 						</div>
 						<div class="slider_next">
@@ -147,9 +167,8 @@
 								<a href="#">Show More &raquo;</a>
 							</div>
 							<div class="info_box" id="one">
-								<h1>Title</h1>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
-								<a href="#">Show More &raquo;</a>								
+								<h1>Our Implementation of Neighborhood Energy</h1>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>				
 							</div>
 							<div class="slider_previous">
 								<a href="#" class="slider_previous">
@@ -191,31 +210,44 @@
 			</div>
 		</div>
 		<div id="floor">
-			<img src="_img/branding_sign.png"/>
+			<img src="_img/branding_sign.png" alt="Neighborhood Natural Energy" title="Neighborhood Natural Energy"/>
 		</div>
 		<div id="grass_background"></div>
 			
 		<div id="footer">
 			<ul id="nav">
 				<li>
-					<a id="news" href="#">
+					<a id="news" href="#" onClick="pageTracker._trackEvent('Outbound', 'Click', 'Blog');">
 						<h1>News</h1>
 						<p>Get the latest on what&#x27;s new with IMBY, visit our blog.</p>
 					</a>
 				</li>
 				<li>
-					<a id="wiki" href="#">
+					<a id="wiki" href="#" onClick="pageTracker._trackEvent('Outbound', 'Click', 'Wiki');">
 						<h1>Wiki</h1>
 						<p>Get the latest on what&#x27;s new with IMBY, visit our blog.</p>
 					</a>
 				</li>
 				<li>
-					<a id="donate" href="#">
+					<a id="donate" href="#" onClick="pageTracker._trackEvent('Outbound', 'Click', 'Donate');">
 						<h1>Donate</h1>
 						<p>Get the latest on what&#x27;s new with IMBY, visit our blog.</p>
 					</a>
 				</li>
 			</ul>
 		</div>
+		
+		
+		<!-- ANALYTICS -->
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-10601581-1");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+
 	</body>
 </html>

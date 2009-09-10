@@ -211,8 +211,9 @@ div.slider_previous{
 	border:1px solid #ace;
 	padding:16px 16px 16px 16px;
 	margin:0px 0px 12px 0px;
-	width:400px;
+	width:330px;
 }
+
 	.info_box h1{
 		font-size:18px;
 		font-weight:bold;
@@ -221,7 +222,7 @@ div.slider_previous{
 	}
 	.info_box p{
 		font-size:14px;
-		line-height:1.3em;
+		line-height:1.2em;
 	}
 	.info_box a{
 		font-size:14px;
@@ -251,7 +252,7 @@ div.slider_previous{
 	margin:60px 0px 0px 50px;
 }
 
-/* neighborhoode energy */
+/* neighborhood energy */
 #slider_neighborhood_energy .info_box{
 	width:320px;
 }
