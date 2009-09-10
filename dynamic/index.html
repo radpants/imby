@@ -4,6 +4,11 @@
 <html>
 	<head>
 		<title>IMBY - In My BackYard Energy Project</title>
+		
+		<meta name="description" content="IMBY Energy is a comprehensive Neighborhood Energy project in SE Portland, Oregon. IMBY will provied renewable, carbon-neutral, thermal energy to a single block (14 homes) on SE Salmon Street.">
+	    <meta name="keywords" content="district energy, green, natural energy, energy, imby, imby energy, diy energy, energy efficiency">
+	    <meta name="Charset" content="UTF-8">
+		
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script src="jquery-1.3.2.min.js"></script>
 		<script type="text/javascript">
@@ -11,6 +16,38 @@
 				var slider_positions = [0,-910,-1820,-2730];
 				var indicator_positions = [95,310,560,820];
 				var current_slide = 0;
+				var mouse_over = $("#mouse_over");
+				var headers = ["Did You Know?","Did You Know?","Did You Know?","Did You Know?","Did You Know?"];
+				var content = ["These houses are all between 60 and 120 years old.","One of these houses uses 1/10 as much energy as the neighbor next door.","Collectively we spend about $1600-$1800 per month to meet our thermal energy needs (space heating and hot water).","Only one of these houses has central air conditioning.","40 people live on this block, ranging in age from 1 to 75."]
+				function setContent(header,subheader,content){
+					$("h3",mouse_over).text(header);
+					$("h4",mouse_over).text(subheader);
+					$("p",mouse_over).text(content);
+				}
+				function updatePosition(e){
+					var x = e.pageX - this.offsetLeft;
+					var y = e.pageY - this.offsetTop;
+					mouse_over.css("left",x-137+"px");
+					mouse_over.css("top",y-137+"px");
+				}
+				$(".a_house").mouseover(function(e){
+					e.preventDefault();
+					updatePosition(e);		
+					house_id = $(this).attr("id") - 1;
+					setContent(headers[house_id],"",content[house_id]);
+					mouse_over.show();						
+				});
+				$(".a_house").mousemove(updatePosition);
+				$(".a_house").mouseout(function(e){
+					mouse_over.hide();
+				});
+				$("#energy_shack").mouseover(function(){
+					setContent("Neighborhood Energy","","Heat is generated at a central location, and distributed to the various houses in the IMBY neighborhood.");
+					$("#energy_shack_hover").show();
+				});
+				$("#energy_shack").mouseout(function(){
+					$("#energy_shack_hover").hide();
+				});
 				$(".slider_nav_intro").click(function(e){
 					e.preventDefault();
 					current_slide = 0;
@@ -71,6 +108,11 @@
 	</head>
 	
 	<body>
+		<div id="mouse_over">
+			<h3>User's Name</h3>
+			<h4>1:03pm, August 13th 2009</h4>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut. #imby</p>
+		</div>
 		<div id="header">
 			<ul id="nav">
 				<li id="home"><a href="http://n2e.org/imby" onClick="pageTracker._trackEvent('Nav', 'Click', 'Home');">Home</a></li>
@@ -97,6 +139,17 @@
 					<!-- INTRO PANEL -->
 					
 					<div id="slider_intro" class="slider_panel">
+						<!-- HOUSES ARE RAD ZOMG -->
+						<img src="_img/houses_overlay.png" usemap="#house_map"/>
+						<img src="_img/energy_shack_hover.png" id="energy_shack_hover" />
+						<map name="house_map">
+							<area shape="poly" coords="214,121,300,80,335,130,250,175" id="energy_shack" class="a_house"/>
+							<area shape="poly" coords="48,143,106,113,130,150,71,180" id="1" class="a_house"/>
+							<area shape="poly" coords="100,170,156,138,177,170,118,200" id="2" class="a_house"/>
+							<area shape="poly" coords="138,192,196,163,217,194,158,224" id="3" class="a_house"/>
+							<area shape="poly" coords="185,215,243,185,265,216,205,246" id="4" class="a_house"/>
+							<area shape="poly" coords="347,112,376,112,368,145,347,148" id="5" class="a_house"/>
+						</map>
 						<div class="right">
 							<div class="info_box" id="one">
 								<h1>What is IMBY energy?</h1>
@@ -210,7 +263,7 @@
 			</div>
 		</div>
 		<div id="floor">
-			<img src="_img/branding_sign.png" alt="Neighborhood Natural Energy" title="Neighborhood Natural Energy"/>
+			<a href="http://n2e.org" alt="N2e Main Site" title="N2e Main Site"><img src="_img/branding_sign.png" id="branding_sign" alt="Neighborhood Natural Energy" title="Neighborhood Natural Energy"/></a>
 		</div>
 		<div id="grass_background"></div>
 			

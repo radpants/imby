@@ -212,6 +212,8 @@ div.slider_previous{
 	padding:16px 16px 16px 16px;
 	margin:0px 0px 12px 0px;
 	width:330px;
+	position:relative;
+	z-index:1;
 }
 
 	.info_box h1{
@@ -238,8 +240,21 @@ div.slider_previous{
 
 /* the intro panel */
 #slider_intro{
-	background:transparent url(_img/houses_overlay.png) no-repeat 20px 50px;
+	/*background:transparent url(_img/houses_overlay.png) no-repeat 20px 50px;*/
 }
+	#slider_intro img{
+		position:absolute;
+		top:0px;
+		left:0px;
+		z-index:0;
+	}
+	#energy_shack_hover{
+		display:none;
+		position:absolute;
+		top:150px !important;
+		left:280px !important;
+		z-index:1 !important;
+	}
 #slider_intro .info_box a{
 }
 #slider_intro .left{
@@ -259,3 +274,41 @@ div.slider_previous{
 #slider_neighborhood_energy img{
 	margin:0px 40px 0px 0px;
 }
+
+/* the mouse over box that comes up when you hover over a house */
+#mouse_over{
+	display:none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:5;
+	width:240px;
+	height:103px;
+	padding:16px;
+	background:url(_img/tweet_bg.png) no-repeat top left;
+}
+	#mouse_over h3{
+		font-size:16px;
+		font-weight:bold;
+		text-transform:uppercase;
+	}
+	#mouse_over h4{
+		font-size:14px;
+		font-weight:bold;
+		color:#666;
+	}
+	#mouse_over p{
+		font-size:14px;
+		font-weight:normal;
+		color:#222;
+		line-height:1.2em;
+	}
+	
+	
+/* easter eggs!!! */
+#branding_sign{
+	-webkit-transition:all 2s ease-out;
+}
+	#branding_sign:hover{
+		-webkit-transform:scale(1.05,1.05) translate(0px,-4px);
+	}
