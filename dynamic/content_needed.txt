@@ -1,0 +1,9 @@
+Basic Info
+	All done. :)
+Houses
+	• A few sentences talking about how the houses have been made more energy effcient
+	• A bit about the thermal solar panels installed on some of the houses
+Neighborhood Energy
+	• A few sentences about how neighborhood energy was implemented in the IMBY project
+More Info
+	• Some links ( 6 or less ) to related projects, research materials, or any other sites you feel correlate to IMBY
