@@ -88,7 +88,7 @@
 					e.preventDefault();
 					current_slide++;
 					$("#slider").animate({marginLeft: slider_positions[current_slide] + "px"},500);
-					$("#slider_indicator").animate({left: indicator_positions[current_slide] + "px"},500);
+					$("#slider_indicator").animate({left: indicator_positions[current_slide] + "px"},500,"swing");
 					animateBackground();
 					
 					// analytics
@@ -111,6 +111,15 @@
 						case 1: pageTracker._trackEvent('Nav', 'Click', 'Houses'); break;
 						case 2: pageTracker._trackEvent('Nav', 'Click', 'Neighborhood Energy'); break;
 					}
+				});
+				
+				$("#ne_show_more").click(function(e){
+					e.preventDefault();
+					$("#ne_more").fadeIn(250);
+				});
+				$("#ne_more_close").click(function(e){
+					e.preventDefault();
+					$("#ne_more").fadeOut(500);
 				});
 			});
 		</script>
@@ -163,12 +172,12 @@
 							<div class="info_box" id="one">
 								<h1>What is IMBY energy?</h1>
 								<p>IMBY Energy is a comprehensive Neighborhood Energy project in SE Portland, Oregon. IMBY will provied renewable, carbon-neutral, thermal energy to a single block (14 homes) on SE Salmon Street.</p>
-								<a href="#" class="slider_nav_neighborhood">Learn More &raquo;</a</a>
+								<a href="#" class="slider_nav_neighborhood">Learn More &raquo;</a>
 							</div>
 							<div class="info_box" id="two">
 								<h1>What&#x27;s the latest news?</h1>
 								<p>For the latest project updates and information about what&rsquo;s new with IMBY, check out our blog.</p>
-								<a href="http://imbyenergy.tumblr.com"  onClick="pageTracker._trackEvent('Outbound', 'Click', 'Blog');">Read our blog &raquo;</a</a>
+								<a href="http://imbyenergy.tumblr.com"  onClick="pageTracker._trackEvent('Outbound', 'Click', 'Blog');">Read our blog &raquo;</a>
 							</div>
 							<div class="info_box" id="three">
 								<h1>I&#x27;d like the technical details</h1>
@@ -219,31 +228,38 @@
 					<!-- NEIGHBORHOOD ENERGY PANEL -->
 					
 					<div id="slider_neighborhood_energy" class="slider_panel">
-						<div class="left">
-							<img src="_img/district_energy.png"/>
+						<div id="ne_main">
+							<div class="left">
+								<img src="_img/district_energy.png"/>
+							</div>
+							<div class="left">
+								<div class="info_box" id="one">
+									<h1>What is Neighborhood Energy</h1>
+									<p>Neighborhood energy (or district energy, as it is also known) is a centralized heating and/or cooling system located on one site that serves multiple neighboring buildings. There are over 6000 of these systems in the US.</p>
+									<a href="#" id="ne_show_more">Show More &raquo;</a>
+								</div>
+								<div class="info_box" id="one">
+									<h1>Our Implementation of Neighborhood Energy</h1>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>				
+								</div>
+								<div class="slider_previous">
+									<a href="#" class="slider_previous">
+										<h1>&laquo; Previous</h1>
+										<p>About the Houses.</p>
+									</a>
+								</div>
+								<div class="slider_next">
+									<a href="#" class="slider_next">
+										<h1>Next &raquo;</h1>
+										<p>Additional Information</p>
+									</a>
+								</div>
+							</div>
 						</div>
-						<div class="left">
-							<div class="info_box" id="one">
-								<h1>What is Neighborhood Energy</h1>
-								<p>Neighborhood energy (or district energy, as it is also known) is a centralized heating and/or cooling system located on one site that serves multiple neighboring buildings. There are over 6000 of these systems in the US.</p>
-								<a href="#">Show More &raquo;</a>
-							</div>
-							<div class="info_box" id="one">
-								<h1>Our Implementation of Neighborhood Energy</h1>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>				
-							</div>
-							<div class="slider_previous">
-								<a href="#" class="slider_previous">
-									<h1>&laquo; Previous</h1>
-									<p>About the Houses.</p>
-								</a>
-							</div>
-							<div class="slider_next">
-								<a href="#" class="slider_next">
-									<h1>Next &raquo;</h1>
-									<p>Additional Information</p>
-								</a>
-							</div>
+						<div id="ne_more">
+							<h1>Neighborhood Energy</h1>
+							<p>Neighborhood energy systems connect all the places in a community - such as schools, churches, businesses, and residences - in a common thermal energy grid. A central plant heats water which is then distributed throughout the neighborhood in underground, insulated pipes. End users install thermal transfer equipment (air handlers, radiators, etc.), allowing them to heat air and domestic water from the incoming hot water supply.  In the US, it is common to find district energy systems on college campuses, in industrial parks and downtown areas.  In the last 30 years, European countries have pioneered the development of smaller-scale applications of the technology, creating neighborhood energy utilities tying together detached single family homes, schools, churches, etc.</p>
+							<a href="#" id="ne_more_close"><img src="_img/close.png"/></a>
 						</div>
 					</div>
 					

@@ -65,7 +65,7 @@ body{
 }
 #slider_nav li{
 	float:left;
-	margin:0px 69px;
+	margin:0px 65px;
 	vertical-align:top;
 }
 #slider_nav li a{
@@ -90,7 +90,7 @@ body{
 	width:910px;
 	padding:20px;
 	margin:0px auto;
-	background:rgba(255,255,255,0.4);
+	background:transparent url(_img/content_bg.png) repeat top left;
 	-webkit-box-shadow:0px 0px 8px rgba(0,0,0,0.3);
 	border:1px solid #79b;
 	border-top:none;
@@ -206,7 +206,7 @@ div.slider_previous{
 	}
 
 .info_box{
-	background:rgba(255,255,255,0.8);
+	background:transparent url(_img/box_bg.png) repeat top left;
 	-webkit-box-shadow:0px 0px 5px rgba(0,0,0,0.3);
 	border:1px solid #ace;
 	padding:16px 16px 16px 16px;
@@ -304,6 +304,28 @@ div.slider_previous{
 		line-height:1.2em;
 	}
 	
+/* more info about neighborhood energy */
+#ne_more{
+	display:none;
+	width:300px;
+	position:absolute;
+	top:50px;
+	left:309px;
+	background:#fff;
+	-webkit-box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+	border:1px solid #ace;
+	padding:32px 16px;
+	line-height:1.2em;
+	z-index:4;
+}
+	#ne_more h1{
+		margin-bottom:16px;
+	}
+	#ne_more a img{
+		position:absolute;
+		top:4px;
+		right:-36px;
+	}
 	
 /* easter eggs!!! */
 #branding_sign{
